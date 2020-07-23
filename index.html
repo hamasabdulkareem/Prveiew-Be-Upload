@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!--<script type="text/javascript" src="SimpleImage.js"></script>-->
+    <title>Document</title>
+</head>
+<body>
+    <div class="conter">
+        <div class="form-input">
+            <label for="file-ip-1">Upload Image</label>
+            <input type="file" id="file-ip-1" accept="image/*" multiple="false" onchange="showPreview(event);">
+            <div class="preview">
+                <img id="file-ip-1-preview">
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        function showPreview(event){
+            if(event.target.files.length >0){
+                var src = URL.createObjectURL(event.target.files[0]);
+                var preview = document.getElementById("file-ip-1-preview");
+                preview.src = src;
+                preview.style.display="block";
+            }
+        } 
+    </script>
+   <!-- <script
+    src="http://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js">
+    </script>
+    
+    <h1>Upload and Display Image</h1>
+    
+    <canvas id="can">
+    </canvas>
+    
+    <p>
+      Filename:
+    <input type="text" id="p">
+    <input type="file" multiple="false" accept="image/*" id="finput" onclick="upload()">
+    </p>
+    <script>
+        function upload() {
+            var imgcanvas= document.getElementById("can");
+       var fileinput = document.getElementById("finput");
+       var image = new SimpleImage(fileinput);
+       image.drawTo(imgcanvas);
+}
+    </script>
+    <div id="can"></div>
+    <input type="file" multiple="false" accept="image/*" id="finput" onclick="upload()">
+    <script>
+        function upload(){
+       var imgcanvas= document.getElementById("can");
+       var fileinput = document.getElementById("finput");
+       var image = new SimpleImage(fileinput);
+       image.drawTo(imgcanvas);} 
+    </script>
+   <input type="file"  accept="image/*" name="image" id="file" style="display: none;">
+    <input type="file"  accept="image/gif, image/jpeg, image/png" name="image" id="file" style="display: none;">
+    <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+    <img id="output" width="200" />	
+    <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
+    <script>
+        var loadFile = function(event) {
+            var image = document.getElementById('output');
+            image.src = URL.createObjectURL(event.target.files[0]);
+        };
+        </script>
+        <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+        <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+        <p><img id="output" width="200" /></p>
+        
+        <script>
+        var loadFile = function(event) {
+            var image = document.getElementById('output');
+            image.src = URL.createObjectURL(event.target.files[0]);
+        };
+        </script>--> 
+</body>
+</html>
